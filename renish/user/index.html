@@ -1,0 +1,67 @@
+<?php
+session_start();
+if(!isset($_SESSION["email"])){
+    header("location: ../index.html");
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php if(isset($_SESSION["name"])){ echo $_SESSION["name"]; } ?> || Page</title>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript">
+  function search() {
+    var input = document.getElementById('search').value;
+    
+  }
+</script>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Fabrication Wala</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+      <li><a href="#"> <span class="glyphicon glyphicon-envelope"></span> Contact US</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../logout.php?auth=<?php echo md5(7) ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+    
+  </div>
+</nav>
+<div class="container">
+<div class="row">
+  <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-info input-lg" type="submit" onclick="search()">Search</button>
+        </span>
+        <input type="text" class="form-control input-lg" placeholder="Iteam Name" id="search">
+      </div>
+  </div>
+ 
+</div>
+  
+
+  <div class="row">
+   // All iteam list here
+    
+  </div>
+
+</div>
+
+  
+    
+</body>
+</html>
+
